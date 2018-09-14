@@ -13,7 +13,7 @@ class PlayerWizard extends Sprite {
         this.defineAnimation("down", 6, 8);
         this.speedWhenWalking = 100;
         this.defineAnimation("Up", 0, 2);
-      
+        this.defineAnimation("right", 3,5);
     }
 
     handleDownArrowKey() {
@@ -40,7 +40,14 @@ class PlayerWizard extends Sprite {
         spell.name = "A spell cast by Marcus";
         spell.setImage("marcusSpellSheet.png");
         spell.angle = 0;
+        
+        handleBoundaryContact() {
+    // Delete spell when it leaves display area
+    game.removeSprite(this);
+}
+        
     }
+    
 }
 let marcus = new PlayerWizard();
 class Spell extends Sprite {
@@ -54,3 +61,5 @@ class Spell extends Sprite {
 
     }
 }
+
+
