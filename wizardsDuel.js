@@ -111,6 +111,7 @@ class NonPlayerWizard extends Sprite {
         if (this.angle === 270) {
             this.playAnimation("down");
         }
+        "Marcus is defeated by the mysterious\nstranger in the dark cloak!\n\nBetter luck next time.";
     }
 }
 let stranger = new NonPlayerWizard();
