@@ -1,13 +1,13 @@
 import { game, Sprite } from "../sgc/sgc.js";
-game.setBackground("floor.png");
+game.setBackground("ninjaHouse.jpg");
 
 class PlayerWizard extends Sprite {
     constructor() {
         super();
-        this.name = ("marcus the Wizard");
+        this.name = ("ninja the Wizard");
         this.width = 48;
         this.height = 48;
-        this.setImage("marcusSheet.png");
+        this.setImage("ninja.jpg");
         this.x = this.width;
         this.y = this.y;
         this.defineAnimation("down", 6, 8);
