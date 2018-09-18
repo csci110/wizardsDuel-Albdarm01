@@ -37,8 +37,8 @@ class PlayerWizard extends Sprite {
         // this sets the position of the spell object equal to
         spell.y = this.y;
         // the position of any object created from the PlayerWizard class
-        spell.name = "A spell cast by Marcus";
-        spell.setImage("marcusSpellSheet.png");
+        spell.name = "A spell cast by ninja";
+        spell.setImage("ninjaSpellSheet.png");
         spell.angle = 0;
         this.playAnimation("right");
         spell.x = this.x + this.width;
