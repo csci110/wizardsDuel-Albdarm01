@@ -104,16 +104,14 @@ class NonPlayerWizard extends Sprite {
             this.playAnimation("up");
         }
         let spell = new Spell();
-        spell.x = 220;
-        // this sets the position of the spell object equal to
-        spell.y = 90;
-        // the position of any object created from the PlayerWizard class
+        spell.x = this.x - this.width;
+        spell.y = this.y;
         spell.name = "A spell cast by stranger";
         spell.setImage("strangerSpellSheet.png");
         spell.angle = 180;
         this.playAnimation("left");
-        spell.x = this.x + this.width;
-        
+
+
     }
     handleAnimationEnd() {
         if (this.angle === 90) {
@@ -124,7 +122,7 @@ class NonPlayerWizard extends Sprite {
         }
         "Marcus is defeated by the mysterious\nstranger in the dark cloak!\n\nBetter luck next time.";
     }
-    
+
 }
 let stranger = new NonPlayerWizard();
 

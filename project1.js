@@ -104,15 +104,14 @@ class NonPlayerWizard extends Sprite {
             this.playAnimation("up");
         }
         let spell = new Spell();
-        spell.x = 220;
+        spell.x = 360;
         // this sets the position of the spell object equal to
-        spell.y = 90;
+        spell.y = 100;
         // the position of any object created from the PlayerWizard class
         spell.name = "A spell cast by stranger";
         spell.setImage("strangerSpellSheet.png");
         spell.angle = 180;
         this.playAnimation("left");
-        spell.x = this.x + this.width;
     }
     handleAnimationEnd() {
         if (this.angle === 90) {
