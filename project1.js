@@ -1,5 +1,5 @@
 import { game, Sprite } from "../sgc/sgc.js";
-game.setBackground("ninjaHouse.jpg");
+game.setBackground("ninjaHouse.png");
 
 class PlayerWizard extends Sprite {
     constructor() {
@@ -7,7 +7,7 @@ class PlayerWizard extends Sprite {
         this.name = ("ninja the Wizard");
         this.width = 48;
         this.height = 48;
-        this.setImage("ninja.jpg");
+        this.setImage("ninja.png");
         this.x = this.width;
         this.y = this.y;
         this.defineAnimation("down", 6, 8);
@@ -104,10 +104,8 @@ class NonPlayerWizard extends Sprite {
             this.playAnimation("up");
         }
         let spell = new Spell();
-        spell.x = 360;
-        // this sets the position of the spell object equal to
-        spell.y = 100;
-        // the position of any object created from the PlayerWizard class
+        spell.x = this.x - this.width;
+        spell.y = this.y;
         spell.name = "A spell cast by stranger";
         spell.setImage("strangerSpellSheet.png");
         spell.angle = 180;
