@@ -10,10 +10,10 @@ class PlayerWizard extends Sprite {
         this.setImage("ninja.png");
         this.x = this.width;
         this.y = this.y;
-        this.defineAnimation("down", 6, 8);
+        this.defineAnimation("down");
         this.speedWhenWalking = 100;
-        this.defineAnimation("Up", 0, 2);
-        this.defineAnimation("right", 3, 5);
+        this.defineAnimation("Up");
+        this.defineAnimation("right");
     }
 
     handleDownArrowKey() {
@@ -78,7 +78,7 @@ class NonPlayerWizard extends Sprite {
     constructor() {
         super();
         this.name = ("The mysterious stranger");
-        this.setImage("strangerSheet.png");
+        this.setImage("ninjaSheet.png");
         this.width = 48;
         this.height = 48;
         this.x = game.displayWidth - 2 * this.width;
@@ -103,14 +103,22 @@ class NonPlayerWizard extends Sprite {
             this.angle = 90;
             this.playAnimation("up");
         }
+        if (Math.random() < 0.1) {
+            // Create a spell object 48 pixels to the left of this object            
+            // Make it go left, give it a name and an image
+            // Play the left animation
+        }
+
         let spell = new Spell();
         spell.x = this.x - this.width;
         spell.y = this.y;
         spell.name = "A spell cast by stranger";
-        spell.setImage("ninjaSpellSheet.png");
+        spell.setImage("strangerSpellSheet.png");
         spell.angle = 180;
         this.playAnimation("left");
     }
+
+
     handleAnimationEnd() {
         if (this.angle === 90) {
             this.playAnimation("up");
@@ -120,6 +128,7 @@ class NonPlayerWizard extends Sprite {
         }
         "Marcus is defeated by the mysterious\nstranger in the dark cloak!\n\nBetter luck next time.";
     }
+
 }
 let stranger = new NonPlayerWizard();
 
